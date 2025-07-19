@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro - Organize</title>
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Registrar Novo Usuário</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Registrar</button>
+    </form>
+    <a href="{% url 'login' %}">Já tem conta? Faça login.</a>
+  </div>
+</body>
+</html>

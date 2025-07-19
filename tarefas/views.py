@@ -3,6 +3,12 @@ from django.contrib.auth.decorators import login_required
 from .models import Tarefa
 from django.contrib.auth import views as auth_views
 
+def index(request):
+    return render(request, 'index.html')
+
+def index(request):
+    return render(request, 'sobrenos.html')
+
 @login_required
 def lista_tarefas(request):
     tarefas = Tarefa.objects.filter(usuario=request.user)

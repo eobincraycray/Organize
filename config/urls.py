@@ -20,8 +20,8 @@ from django.contrib.auth import views as auth_views  # <- ESTE É O IMPORT FALTA
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('tarefas.urls')),
-    path('', include('usuario.urls')),
+    path('', include('tarefas.urls')),  # Página inicial vindo de 'tarefas'
     path('usuario/', include(('usuario.urls', 'usuario'), namespace='usuario')),
+    path('categorias/', include('categoria.urls')),
 
 ]
